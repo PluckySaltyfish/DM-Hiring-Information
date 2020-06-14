@@ -1,3 +1,7 @@
 __pycache__
 .pyc
 .DS_Store
+*checkpoint.ipynb
+.mypy_cache*
+.vscode*
+.idea
