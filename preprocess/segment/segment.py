@@ -1,6 +1,6 @@
 # -*- coding: utf8 -*-
 import json
-import fm
+from preprocess import fm
 import pandas as pd
 import requests
 
@@ -63,7 +63,7 @@ def generate_segment_info(obj):
 
 
 if __name__ == '__main__':
-    df = pd.read_csv('../../data/去噪声后数据.csv')
+    df = pd.read_csv('../data/去噪声后数据.csv')
     lst = []
     seg_words = []
     for i in range(len(df)):
@@ -74,6 +74,6 @@ if __name__ == '__main__':
             seg_words += seg_lst
         except Exception:
             lst.append(str(i))
-    fm.save_file('result/seg_words.txt', seg_words)
-    fm.save_file('result/exception.txt', lst)
+    fm.save_file('segment/result/seg_words.txt', seg_words)
+    fm.save_file('segment/result/exception.txt', lst)
     df.to_csv('../data/segment.csv')
